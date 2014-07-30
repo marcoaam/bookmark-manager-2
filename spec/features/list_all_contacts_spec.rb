@@ -9,4 +9,5 @@ feature 'User browses the list if contacts' do
 		visit '/'
 		expect(page).to have_content('Marco')
 	end
+	
 end

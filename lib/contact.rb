@@ -1,6 +1,8 @@
 class Contact
-	
+
 	include DataMapper::Resource
+
+	has n, :groups, :through => Resource
 
 	property :id,      Serial
 	property :name,    String, length: 2..50, required: true

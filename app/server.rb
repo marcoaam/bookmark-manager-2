@@ -13,10 +13,11 @@ class ContactBook < Sinatra::Base
 	end
 
 	post '/contacts/new' do
-		name = params[:name]
-		email = params[:email]
-		country = params[:country]
-		Contact.create(name: name, email: email, country: country)
+		name, email, country = params[:name], params[:email], params[:country]
+		groups = params[:groups].split(' ').map do |group|
+  		Group.first_or_create(:text => group)
+		end
+		Contact.create(name: name, email: email, country: country, groups: groups)
 		redirect to('/')
 	end
 
