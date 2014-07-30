@@ -12,4 +12,12 @@ class ContactBook < Sinatra::Base
 		erb :index
 	end
 
+	post '/contacts/new' do
+		name = params[:name]
+		email = params[:email]
+		country = params[:country]
+		Contact.create(name: name, email: email, country: country)
+		redirect to('/')
+	end
+
 end

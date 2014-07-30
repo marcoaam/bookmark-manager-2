@@ -1,5 +1,14 @@
 <% @contacts.each do |contact|%>
-	<%= contact.name %>
-	<%= contact.email %>
+	<%= contact.name %> 
+	<%= contact.email %> 
 	<%= contact.country %>
-	<%end%>
+<%end%>
+
+<div id="new-contact">
+	<form action="/contacts/new" method="POST">
+		<input type="text" name="name">
+		<input type="text" name="email">		
+		<input type="text" name="country">
+		<input type="submit" value="Add Contact">
+	</form>
+</div>
