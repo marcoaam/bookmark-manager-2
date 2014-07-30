@@ -8,6 +8,7 @@ class ContactBook < Sinatra::Base
 	set :views, Proc.new { File.join(root, 'views') }
 
 	get '/' do
+		@contacts = Contact.all
 		erb :index
 	end
 

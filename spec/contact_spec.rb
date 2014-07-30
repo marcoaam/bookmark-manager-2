@@ -7,6 +7,7 @@ describe Contact do
 									country: "Venezuela")
 		expect(Contact.count).to eq 1
 		contact = Contact.first
+		
 		expect(contact.name).to eq "Marco"
 		expect(contact.email).to eq "marco.army@gmail.com"
 		expect(contact.country).to eq "Venezuela"
