@@ -21,4 +21,10 @@ class ContactBook < Sinatra::Base
 		redirect to('/')
 	end
 
+	get '/groups/:text' do
+	  group = Group.first(:text => params[:text])
+	  @contacts = group ? group.contacts : []
+	  erb :index
+	end
+
 end

@@ -27,6 +27,6 @@ feature 'User can add a contact'  do
 			fill_in 'country', :with => country
 			fill_in 'groups', :with => groups.join(' ')
 			click_button 'Add Contact'
-		end	
+		end
 	end
 end
